@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Interactive Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="quiz">
+    <!-- Start screen -->
+    <section id="startScreen" class="screen active">
+      <h1>Web Technology Quiz</h1>
+      <p>Test your knowledge of HTML, CSS and JavaScript.</p>
+      <ul class="rules">
+        <li><span id="totalQ">10</span> multiple-choice questions</li>
+        <li><span id="timeLimit">15</span> seconds per question</li>
+        <li>Instant feedback after every answer</li>
+      </ul>
+      <button id="startBtn" class="primary">Start Quiz</button>
+    </section>
+
+    <!-- Question screen -->
+    <section id="questionScreen" class="screen">
+      <div class="top-bar">
+        <span id="progressText">Question 1 / 10</span>
+        <span id="timer" class="timer">15s</span>
+      </div>
+      <div class="progress"><div id="progressFill"></div></div>
+
+      <h2 id="questionText">Question goes here</h2>
+      <div id="options" class="options"></div>
+
+      <p id="feedback" class="feedback" aria-live="polite"></p>
+
+      <div class="bottom-bar">
+        <span>Score: <b id="score">0</b></span>
+        <button id="nextBtn" class="primary" disabled>Next</button>
+      </div>
+    </section>
+
+    <!-- Result screen -->
+    <section id="resultScreen" class="screen">
+      <h1>Quiz Completed!</h1>
+      <div class="score-circle"><span id="finalScore">0</span><small>/ <span id="finalTotal">10</span></small></div>
+      <p id="remark" class="remark"></p>
+      <h3>Review</h3>
+      <ol id="review" class="review"></ol>
+      <button id="restartBtn" class="primary">Play Again</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
